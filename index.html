@@ -22,7 +22,11 @@
       rel="stylesheet" 
       type="text/css" 
       href="Assets/style.css" 
-    />>
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="app.js"></script>
 
     <title>Day Scheduler</title>
   
@@ -35,13 +39,19 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <main class="container">
+      <!-- Time the user wants the workday to start at and instructions for doing so -->
+      <section>
+        <label for="user-input-start-time">Enter a start time:</label>
+        <input type="text" id="user-input-start-time"></input>
+        <button type"button" id="submit-start-time">Let's Go!</button>
+      </section>
+
       <!-- Timeblocks go here -->
       <section class="row" id="time-slot-section">
-        
       </section>
     </main>
-    <script src="app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+
+    
   </body>
 </html>
