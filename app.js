@@ -4,11 +4,54 @@ $('document').ready(function () {
 
     const userInputStartTime = $("#user-input-start-time");
     const buttonSubmitStartTime = $("#submit-start-time");
-    
+
+    const calendarObj = {
+        startTime: 9,
+        save: function () {
+            console.log("save was run");
+            let dayCalendar = JSON.parse(localStorage.getItem("dayCalendar"));
+            
+            
+            const savedCalendarObj = {
+                startTime: calendarObj.startTime,
+                textareas: {
+                    
+                }
+            }
+            for (i = 0; i < 9; i++) {
+                savedCalendarObj.textareas[i] = $(`#textarea-${i}`).val();
+                console.log(`savedCalendarObj.textareas[i] = ${savedCalendarObj.textareas[i]}`);
+            }
+
+
+
+            dayCalendar.push(savedCalendarObj);
+            localStorage.setItem("dayCalendar", JSON.stringify(dayCalendar));
+        },
+        load: function () {
+            calendarObj.startTime = savedCalendarObj.startTime
+        }
+    }
+
+
+    // if (!Array.isArray(dayCalendar)) {  // does an array already exist in local storage?
+    //     dayCalendar = [];  // if not then we make it exist!
+    //     console.log(`dayCalendar initialized = ${dayCalendar}`);
+    // } else {
+    //     calendarObj.load();
+    //     console.log('else for storage');
+    // }
+
+    //     localStorage.setItem("userScores", JSON.stringify(savedScheduleLayout));
+
+    // const setLocalLayout = localStorage.setItem("userScores", JSON.stringify(savedScheduleLayout));
+    // const setLocalTextData = localStorage.setItem("userScores", JSON.stringify(savedTextareaData));
+
     function displayTimeSlots() {
-        console.log(`function run`);
+        calendarObj.startTime = parseInt(userInputStartTime.val())
         for (let i = 0; i < 9; i++) {
-            let hour = parseInt(userInputStartTime.val()) + i;  // grab users input and convert to number
+            let hour = calendarObj.startTime + i;  // grab users input and convert to number
+            
             if (hour > 12) {  // if the number is > 12 we -12 to start back at 1
                 hour -= 12;
             }
@@ -23,16 +66,6 @@ $('document').ready(function () {
         buttonSection.append(saveButton);
     }
 
-    // !!! function for easy save !!!
-    function saveToLocal(layout_or_textareaData) {
-        if (this === 'layout') {  // create global var to hold 'layout'
-            JSON.parse(localStorage.getItem("userScores"));
-            localStorage.setItem("userScores", JSON.stringify(savedScheduleLayout));
-        }
-        const setLocalLayout = localStorage.setItem("userScores", JSON.stringify(savedScheduleLayout));
-        const setLocalTextData = localStorage.setItem("userScores", JSON.stringify(savedTextareaData));
-    }
-
     // 
     // ON CLICK LISTENERS
     // 
@@ -40,4 +73,12 @@ $('document').ready(function () {
         console.log(`button clicked`);
         displayTimeSlots();
     });
+
+    $(document).on("click", "#save-button", function(){
+        console.log("save was pressed");
+        calendarObj.save();
+    });
+
+    console.log(localStorage.length);
+
 });
