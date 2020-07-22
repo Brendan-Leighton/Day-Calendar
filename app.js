@@ -8,7 +8,7 @@ $('document').ready(function () {
     let dayCalendar = JSON.parse(localStorage.getItem("dayCalendar"));
 
     const calendarObj = {
-        startTime: 9,
+        startTime: 0,
         save: function () {
             console.log("save was run");
             
@@ -27,7 +27,7 @@ $('document').ready(function () {
 
 
 
-            dayCalendar.push(savedCalendarObj);
+            dayCalendar.splice(0, 1, savedCalendarObj);
             localStorage.setItem("dayCalendar", JSON.stringify(dayCalendar));
         },
         load: function () {
@@ -45,24 +45,24 @@ $('document').ready(function () {
         dayCalendar = [];
     }
 
-    //     localStorage.setItem("userScores", JSON.stringify(savedScheduleLayout));
-
-    // const setLocalLayout = localStorage.setItem("userScores", JSON.stringify(savedScheduleLayout));
-    // const setLocalTextData = localStorage.setItem("userScores", JSON.stringify(savedTextareaData));
-
     function displayTimeSlots() {
-        if (!Array.isArray(dayCalendar)) {
+        if (!dayCalendar[0]) {
             calendarObj.startTime = parseInt(userInputStartTime.val());
         }
-        let hour = calendarObj.startTime;
+        
         for (let i = 0; i < 9; i++) {
-            hour += i;  // grab users input and convert to number
+            hour = calendarObj.startTime;
+            hour += i;  // increment hour with i
             if (hour > 12) {  // if the number is 13 we -12 to start back at 1
                 hour -= 12;
             }
             // CREATE HTML ELEMENTS that make up the time blocks
             const timeDiv = $("<div>").addClass(`col-2 hour`).attr("id", `time-display-${i}`).text(`${hour}:00`);  // this is where the time displays
             const textArea = $("<textarea>").addClass(`col-10`).attr("id", `textarea-${i}`);  // the textarea for the things to do during time block
+            if (dayCalendar[0]) {
+                    textArea.val(dayCalendar[0].textareas[i]);
+            }
+
             timeSlotSection.append(timeDiv);  // add time display to time block section
             timeSlotSection.append(textArea);  // add textarea to time block section
         }
@@ -83,7 +83,5 @@ $('document').ready(function () {
         console.log("save was pressed");
         calendarObj.save();
     });
-
-    // console.log(localStorage.dayCalendar.length);  // dayCalendar is undefined
 
 });
