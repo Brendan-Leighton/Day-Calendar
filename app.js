@@ -1,6 +1,7 @@
 $('document').ready(function () {
     const timeSlotSection = $("#time-slot-section");
-    
+    const buttonSection = $("#button-section");
+
     const userInputStartTime = $("#user-input-start-time");
     const buttonSubmitStartTime = $("#submit-start-time");
     
@@ -12,11 +13,14 @@ $('document').ready(function () {
                 hour -= 12;
             }
             // CREATE HTML ELEMENTS that make up the time blocks
-            const timeDiv = $("<div>").addClass(`col-4`).attr("id", `time-display-${i}`).text(`${hour}:00`);  // this is where the time displays
-            const textArea = $("<textarea>").addClass(`col-8`).attr("id", `textarea-${i}`);  // the textarea for the things to do during time block
+            const timeDiv = $("<div>").addClass(`col-2 hour`).attr("id", `time-display-${i}`).text(`${hour}:00`);  // this is where the time displays
+            const textArea = $("<textarea>").addClass(`col-10`).attr("id", `textarea-${i}`);  // the textarea for the things to do during time block
             timeSlotSection.append(timeDiv);  // add time display to time block section
             timeSlotSection.append(textArea);  // add textarea to time block section
         }
+
+        const saveButton = $("<button>").addClass('saveBtn').attr('id', 'save-button').text('Save');
+        buttonSection.append(saveButton);
     }
 
     // !!! function for easy save !!!
