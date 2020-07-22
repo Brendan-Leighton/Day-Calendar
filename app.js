@@ -5,19 +5,21 @@ $('document').ready(function () {
     const userInputStartTime = $("#user-input-start-time");
     const buttonSubmitStartTime = $("#submit-start-time");
 
+    let dayCalendar = JSON.parse(localStorage.getItem("dayCalendar"));
+
     const calendarObj = {
         startTime: 9,
         save: function () {
             console.log("save was run");
-            let dayCalendar = JSON.parse(localStorage.getItem("dayCalendar"));
             
-            
+
             const savedCalendarObj = {
                 startTime: calendarObj.startTime,
                 textareas: {
-                    
+
                 }
             }
+
             for (i = 0; i < 9; i++) {
                 savedCalendarObj.textareas[i] = $(`#textarea-${i}`).val();
                 console.log(`savedCalendarObj.textareas[i] = ${savedCalendarObj.textareas[i]}`);
@@ -29,18 +31,19 @@ $('document').ready(function () {
             localStorage.setItem("dayCalendar", JSON.stringify(dayCalendar));
         },
         load: function () {
-            calendarObj.startTime = savedCalendarObj.startTime
+            console.log(dayCalendar[0].startTime);
+            calendarObj.startTime = parseInt(dayCalendar[0].startTime);
+            displayTimeSlots();
         }
     }
 
 
-    // if (!Array.isArray(dayCalendar)) {  // does an array already exist in local storage?
-    //     dayCalendar = [];  // if not then we make it exist!
-    //     console.log(`dayCalendar initialized = ${dayCalendar}`);
-    // } else {
-    //     calendarObj.load();
-    //     console.log('else for storage');
-    // }
+    if (Array.isArray(dayCalendar)) {  // does an array already exist in local storage?
+        calendarObj.load();
+        console.log('else for storage');
+    } else {
+        dayCalendar = [];
+    }
 
     //     localStorage.setItem("userScores", JSON.stringify(savedScheduleLayout));
 
@@ -48,11 +51,13 @@ $('document').ready(function () {
     // const setLocalTextData = localStorage.setItem("userScores", JSON.stringify(savedTextareaData));
 
     function displayTimeSlots() {
-        calendarObj.startTime = parseInt(userInputStartTime.val())
+        if (!Array.isArray(dayCalendar)) {
+            calendarObj.startTime = parseInt(userInputStartTime.val());
+        }
+        let hour = calendarObj.startTime;
         for (let i = 0; i < 9; i++) {
-            let hour = calendarObj.startTime + i;  // grab users input and convert to number
-            
-            if (hour > 12) {  // if the number is > 12 we -12 to start back at 1
+            hour += i;  // grab users input and convert to number
+            if (hour > 12) {  // if the number is 13 we -12 to start back at 1
                 hour -= 12;
             }
             // CREATE HTML ELEMENTS that make up the time blocks
@@ -74,11 +79,11 @@ $('document').ready(function () {
         displayTimeSlots();
     });
 
-    $(document).on("click", "#save-button", function(){
+    $(document).on("click", "#save-button", function () {
         console.log("save was pressed");
         calendarObj.save();
     });
 
-    console.log(localStorage.length);
+    // console.log(localStorage.dayCalendar.length);  // dayCalendar is undefined
 
 });
