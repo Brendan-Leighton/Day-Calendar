@@ -7,23 +7,21 @@ $('document').ready(function () {
     function displayTimeSlots() {
         console.log(`function run`);
         for (let i = 0; i < 9; i++) {
-            console.log(`for loop accessed`);
-            let hour = parseInt(userInputStartTime.val()) + i;
-            if (hour > 12) {
+            let hour = parseInt(userInputStartTime.val()) + i;  // grab users input and convert to number
+            if (hour > 12) {  // if the number is > 12 we -12 to start back at 1
                 hour -= 12;
             }
-            timeSignature = `${hour}:00`;
-            console.log(hour);
-            console.log(timeSignature);
-            const timeDiv = $("<div>").addClass(`col-4`).attr("id", `time-display-${i}`).text(`${hour}:00`);
-            const textArea = $("<textarea>").addClass(`col-8`).attr("id", `textarea-${i}`);
-            timeSlotSection.append(timeDiv);
-            timeSlotSection.append(textArea);
+            // CREATE HTML ELEMENTS that make up the time blocks
+            const timeDiv = $("<div>").addClass(`col-4`).attr("id", `time-display-${i}`).text(`${hour}:00`);  // this is where the time displays
+            const textArea = $("<textarea>").addClass(`col-8`).attr("id", `textarea-${i}`);  // the textarea for the things to do during time block
+            timeSlotSection.append(timeDiv);  // add time display to time block section
+            timeSlotSection.append(textArea);  // add textarea to time block section
         }
     }
 
+    // !!! function for easy save !!!
     function saveToLocal(layout_or_textareaData) {
-        if (this === 'layout') {
+        if (this === 'layout') {  // create global var to hold 'layout'
             JSON.parse(localStorage.getItem("userScores"));
             localStorage.setItem("userScores", JSON.stringify(savedScheduleLayout));
         }
@@ -31,6 +29,9 @@ $('document').ready(function () {
         const setLocalTextData = localStorage.setItem("userScores", JSON.stringify(savedTextareaData));
     }
 
+    // 
+    // ON CLICK LISTENERS
+    // 
     buttonSubmitStartTime.on('click', function () {
         console.log(`button clicked`);
         displayTimeSlots();
