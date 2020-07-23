@@ -33,16 +33,15 @@
   </head>
 
   <body>
-    <header>
-      <div class="jumbotron">
-        <h1 class="display-3">Work Day Scheduler</h1>
-        <p class="lead">A simple calendar app for scheduling your work day</p>
-        <p id="currentDay" class="lead"></p>
-      </div>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
 
       <section class="current-date">
         <div id="day-of-week"></div>
         <div id="current-date-display"></div>
+        <div id="current-time-display"></div>
       </section>
     </header>
     <main class="container">
@@ -58,10 +57,7 @@
       <!-- Timeblocks go here -->
       <section class="row">
         <div class="col-10">
-          <div class="row" id="time-slot-section">
-            
-          </div>
-
+          <div class="row" id="time-slot-section"></div>
         </div>
         <div class="col-2" id="button-section">
 

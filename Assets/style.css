@@ -4,87 +4,98 @@ body {
     line-height: 1;
   }
 
-  body header section.day-of-week {
-    font-size: large;
-  }
-  
-  
-  .jumbotron {
-    text-align: center;
-    background-color: transparent;
-    color: black;
-    border-radius: 0;
-    border-bottom: 10px solid black;
-  }
-  
-  .description{
-    white-space: pre-wrap;
-  }
-  
-  .time-block{
-    text-align: center;
-    border-radius: 15px;
-  }
+.current-date {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
 
-  textarea{
-    background: transparent;
-    border: 2px dashed #d3d3d3;
-    resize: none;
-    color: #000000;
-    border-left: 1px solid black;
-    padding: 10px;
-  }
-  
-  .row {
-    /* white-space: pre-wrap; */
-    height: 80px;
-    border-top: 1px solid white;;
-  }
-  
-  .hour {
-    background-color: #ffffff;
-    color: #000000;
-    border-top: 1px dashed #000000;
-    padding-top: 20px;
-    padding-right: 15px;
-    text-align: right;
-  }
-  
-  .past {
-    background-color: #d3d3d3;
-    color: white;
-  }
-  
-  .present {
-    background-color: #ff6961;
-    color: white;
-  }
-  
-  .future {
-    background-color: #77dd77;
-    color: white;
-  }
-  
-  section div#button-section {
-      padding: 0px;
-  }
+body header section div#day-of-week {
+  font-size: 30px;
+}
 
-  div button.saveBtn {
-    border: 2px solid black;
-    border-left: 1px solid black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #06AED5;
-    color: white;
-    height: 100%;
-    margin: 0px;
-    height: 500px;
-    width: 100%;
-    min-width: fit-content;
-  }
-  
-  .saveBtn:hover {
-    font-size: 20px;
-    transition: all .3s ease-in-out;
-  }
-  
+body header section div#current-date-display {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+body header section div#current-time-display {
+  font-size: 20px;
+}
+
+
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+}
+
+.description{
+  white-space: pre-wrap;
+}
+
+.time-block{
+  text-align: center;
+  border-radius: 15px;
+}
+
+textarea{
+  background: transparent;
+  border: 2px dashed #d3d3d3;
+  /* resize: none; */
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+}
+
+.row {
+  /* white-space: pre-wrap; */
+  border-top: 1px solid white;;
+}
+
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px dashed #000000;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.past {
+  background-color: #d3d3d3;
+  color: white;
+}
+
+.present {
+  background-color: #ff6961;
+  color: white;
+}
+
+.future {
+  background-color: #77dd77;
+  color: white;
+}
+
+section div#button-section {
+    padding: 0px;
+}
+
+div button.saveBtn {
+  border: 2px solid black;
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06AED5;
+  color: white;
+  height: 100%;
+  margin: 0px;
+  width: 100%;
+  min-width: fit-content;
+}
+
+.saveBtn:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+}
