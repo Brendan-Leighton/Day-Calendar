@@ -3,15 +3,11 @@ body {
     font-size: 16px;
     line-height: 1;
   }
-  
-  textarea{
-    background: transparent;
-    border: 2px dashed #d3d3d3;
-    resize: none;
-    color: #000000;
-    border-left: 1px solid black;
-    padding: 10px;
+
+  body header section.day-of-week {
+    font-size: large;
   }
+  
   
   .jumbotron {
     text-align: center;
@@ -28,6 +24,15 @@ body {
   .time-block{
     text-align: center;
     border-radius: 15px;
+  }
+
+  textarea{
+    background: transparent;
+    border: 2px dashed #d3d3d3;
+    resize: none;
+    color: #000000;
+    border-left: 1px solid black;
+    padding: 10px;
   }
   
   .row {
