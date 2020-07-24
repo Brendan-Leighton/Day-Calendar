@@ -40,6 +40,15 @@ body header section div#current-time-display {
   white-space: pre-wrap;
 }
 
+main section#time-slot-section {
+  margin: 0px;
+  padding: 0px;
+}
+
+.col-10 {
+  padding: 0px; 
+}
+
 .time-block{
   text-align: center;
   border-radius: 15px;
@@ -48,7 +57,6 @@ body header section div#current-time-display {
 textarea{
   background: transparent;
   border: 2px dashed #d3d3d3;
-  /* resize: none; */
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
@@ -56,15 +64,18 @@ textarea{
 
 .row {
   /* white-space: pre-wrap; */
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
+  position: relative;
 }
 
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
-  padding-top: 20px;
-  text-align: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .past {
@@ -84,6 +95,7 @@ textarea{
 
 section div#button-section {
     padding: 0px;
+    margin: 0px;
 }
 
 div button.saveBtn {
