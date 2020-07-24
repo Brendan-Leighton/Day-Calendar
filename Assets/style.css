@@ -12,7 +12,7 @@ body {
     color: var(--color-secondary);
   }
 
-  /* Used on select Label/Input/Button combos to hide when not needed */
+/* Used on Label/Input/Button-combos to hide when not needed */
 .hide {
   display: none;
 }
@@ -44,9 +44,9 @@ header section div#current-date-display {
 header section div#current-time-display {
   font-size: 20px;
 }
-
-.description{
-  white-space: pre-wrap;
+/* MAIN - SECTION 1 + 2 + 3 */
+main section {
+  margin-bottom: 30px;
 }
 /* MAIN - SECTION 1 + 2 */
 main section button.btn {
@@ -56,19 +56,23 @@ main section button.btn {
 input {
   background-color: var(--color-tertiary);
 }
-/* MAIN - SECTION 2 */
-main section#edit-calendar-options {
-  margin: 20px 0px;
+main section#edit-calendar-options, main section#initial-time-selection {
   text-align: center;
 }
 /* MAIN - SECTION 3 */
 main section div.time-block{
   text-align: center;
   border-radius: 15px;
-}
-main section div.col-10 {
+  /* next selector is same element */
+} 
+main section div.col-10 { 
   padding: 0px; 
 }
+section div#button-section {
+  padding: 0px;
+  margin: 0px;
+}
+/* MAIN - SECTION 3 - DYNAMICALLY GENERATED ELEMENTS */
 main section div div div.hour {
   background-color: var(--color-tertiary);
   color: #000000;
@@ -78,7 +82,6 @@ main section div div div.hour {
   align-items: center;
   justify-content: center;
 }
-
 main section div div textarea{
   background: transparent;
   border: 2px dashed #d3d3d3;
@@ -87,7 +90,6 @@ main section div div textarea{
   padding: 10px;
   height: 80px;
 }
-
 .past {
   background-color: #686868;
   color: white;
@@ -100,12 +102,6 @@ main section div div textarea{
   background-color: #77dd77;
   color: white;
 }
-
-section div#button-section {
-    padding: 0px;
-    margin: 0px;
-}
-
 div button.saveBtn {
   border: 2px solid black;
   border-left: 1px solid black;
@@ -118,9 +114,8 @@ div button.saveBtn {
   width: 100%;
   min-width: fit-content;
 }
-
 .btn:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
-  color: aquamarine;
+  color: var(--color-secondary);
 }
