@@ -48,18 +48,25 @@
 
       
       <!-- Time the user wants the workday to start at and instructions for doing so -->
-      <section>
+      <section id="initial-time-selection">
         <label for="user-input-start-time">Enter a start time:</label>
         <input type="text" id="user-input-start-time"></input>
         <button type"button" id="submit-start-time">Let's Go!</button>
       </section>
 
+      <!-- CHANGE TIME section -->
+      <section id="edit-calendar-options">
+        <label for="user-input-change-time">Enter a new time:</label>
+        <input type="text" id="user-input-change-time"></input>
+        <button type"button" id="submit-change-time">Update</button>
+      </section>
+
       <!-- Timeblocks go here -->
       <section class="row">
-        <div class="col-10">
-          <div class="row" id="time-slot-section"></div>
+        <div class="col-10" id="time-blocks">
+          
         </div>
-        <div class="col-2" id="button-section">
+        <div class="col-2" id="save-button-section">
 
         </div>
       </section>
