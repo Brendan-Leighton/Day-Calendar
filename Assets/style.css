@@ -1,7 +1,15 @@
+:root {
+  --color-primary: #960fe4;
+  --color-secondary: aquamarine;
+  --color-tertiary: #d3d3d3;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1;
+    background-color: #2c2c2c;
+    color: var(--color-secondary);
   }
 
   /* Used on select Label/Input/Button combos to hide when not needed */
@@ -13,9 +21,12 @@ body {
 header.jumbotron {
   text-align: center;
   background-color: transparent;
-  color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+}
+.display-3 {
+  color: var(--color-primary);
+  font-weight: 700;
 }
 /* HEADER - SECTION */
 header section.current-date {
@@ -39,11 +50,16 @@ header section div#current-time-display {
 }
 /* MAIN - SECTION 1 + 2 */
 main section button.btn {
-  
+  background-color: var(--color-primary);
+  color: aliceblue;
+}
+input {
+  background-color: var(--color-tertiary);
 }
 /* MAIN - SECTION 2 */
 main section#edit-calendar-options {
   margin: 20px 0px;
+  text-align: center;
 }
 /* MAIN - SECTION 3 */
 main section div.time-block{
@@ -54,7 +70,7 @@ main section div.col-10 {
   padding: 0px; 
 }
 main section div div div.hour {
-  background-color: #ffffff;
+  background-color: var(--color-tertiary);
   color: #000000;
   border-top: 1px dashed #000000;
   margin: 0;
@@ -66,7 +82,7 @@ main section div div div.hour {
 main section div div textarea{
   background: transparent;
   border: 2px dashed #d3d3d3;
-  color: #000000;
+  color: var(--color-secondary);
   border-left: 1px solid black;
   padding: 10px;
   height: 80px;
@@ -95,7 +111,7 @@ div button.saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06AED5;
+  background-color: var(--color-primary);
   color: white;
   height: 100%;
   margin: 0px;
@@ -103,7 +119,8 @@ div button.saveBtn {
   min-width: fit-content;
 }
 
-.saveBtn:hover {
+.btn:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+  color: aquamarine;
 }
