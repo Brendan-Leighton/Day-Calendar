@@ -27,26 +27,27 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="lib/app.js"></script>
-
     <title>Day Scheduler</title>
-  
   </head>
 
   <body>
+
+    <!-- HEADER -->
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
 
+      <!-- DISPLAY CURRENT DATE AND TIME -->
       <section class="current-date">
         <div id="day-of-week"></div>
         <div id="current-date-display"></div>
         <div id="current-time-display"></div>
       </section>
     </header>
-    <main class="container">
 
-      
+    <!-- MAIN CONTENT -->
+    <main class="container">
       <!-- Time the user wants the workday to start at and instructions for doing so -->
       <section id="initial-time-selection">
         <label for="user-input-start-time">Enter a start time:</label>
@@ -56,23 +57,17 @@
 
       <!-- CHANGE TIME section -->
       <section id="edit-calendar-options">
-        <label for="user-input-change-time">Enter a new time:</label>
+        <label for="user-input-change-time">New start time:</label>
         <input type="text" id="user-input-change-time"></input>
         <button type"button" id="submit-change-time">Update</button>
       </section>
 
-      <!-- Timeblocks go here -->
+      <!-- TIME BLOCKS DISPLAY HERE -->
       <section class="row">
-        <div class="col-10" id="time-blocks">
-          
-        </div>
-        <div class="col-2" id="save-button-section">
-
-        </div>
+        <div class="col-10" id="time-blocks"></div>
+        <div class="col-2" id="save-button-section"></div>
       </section>
     </main>
 
-
-    
   </body>
 </html>
