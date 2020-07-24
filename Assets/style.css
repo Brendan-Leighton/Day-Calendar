@@ -4,71 +4,56 @@ body {
     line-height: 1;
   }
 
-  .hide {
-    display: none;
-  }
-
-.current-date {
-  margin-top: 50px;
-  margin-bottom: 20px;
+  /* Used on select Label/Input/Button combos to hide when not needed */
+.hide {
+  display: none;
 }
 
-body header section div#day-of-week {
-  font-size: 30px;
-}
-
-body header section div#current-date-display {
-  font-size: 25px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-body header section div#current-time-display {
-  font-size: 20px;
-}
-
-
-.jumbotron {
+/* HEADER */
+header.jumbotron {
   text-align: center;
   background-color: transparent;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
 }
+/* HEADER - SECTION */
+header section.current-date {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+header section div#day-of-week {
+  font-size: 30px;
+}
+header section div#current-date-display {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+header section div#current-time-display {
+  font-size: 20px;
+}
 
 .description{
   white-space: pre-wrap;
 }
-
-main section#time-slot-section {
-  margin: 0px;
-  padding: 0px;
+/* MAIN - SECTION 1 + 2 */
+main section button.btn {
+  
 }
-
-.col-10 {
-  padding: 0px; 
+/* MAIN - SECTION 2 */
+main section#edit-calendar-options {
+  margin: 20px 0px;
 }
-
-.time-block{
+/* MAIN - SECTION 3 */
+main section div.time-block{
   text-align: center;
   border-radius: 15px;
 }
-
-textarea{
-  background: transparent;
-  border: 2px dashed #d3d3d3;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
+main section div.col-10 {
+  padding: 0px; 
 }
-
-.row {
-  /* white-space: pre-wrap; */
-  border-top: 1px solid white;
-  position: relative;
-}
-
-.hour {
+main section div div div.hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
@@ -78,16 +63,23 @@ textarea{
   justify-content: center;
 }
 
+main section div div textarea{
+  background: transparent;
+  border: 2px dashed #d3d3d3;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+  height: 80px;
+}
+
 .past {
   background-color: #686868;
   color: white;
 }
-
 .present {
   background-color: #ff6961;
   color: white;
 }
-
 .future {
   background-color: #77dd77;
   color: white;
