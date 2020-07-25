@@ -52,6 +52,8 @@ main section {
 main section button.btn {
   background-color: var(--color-primary);
   color: aliceblue;
+  box-shadow: none;
+  text-transform: uppercase;
 }
 input {
   background-color: var(--color-tertiary);
