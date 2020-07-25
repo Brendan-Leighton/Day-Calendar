@@ -44,8 +44,8 @@ Project Link: [https://br3ndan-l8n.github.io/Day-Calendar/](https://br3ndan-l8n.
 
 <!-- CONTACT -->
 # Contact
-* [Email](BR3NDAN.L8N@gmail.com)
-* [LinkedIn](https://www.linkedin.com/in/brendan-leighton-ab5944113/)
+* [BR3NDAN.L8N@gmail.com](BR3NDAN.L8N@gmail.com)
+* [linkedin.com/in/brendan-leighton/](https://www.linkedin.com/in/brendan-leighton/)
 
 <!-- ACKNOWLEDGEMENTS -->
 # Acknowledgements
