@@ -38,7 +38,7 @@ Project Link: [https://br3ndan-l8n.github.io/Day-Calendar/](https://br3ndan-l8n.
 
 ## Project Screenshot
 
-![Screenshot](Assets/Images/screencapture-br3ndan-l8n-github-io-Day-Calendar-2020-07-24-20_37_43.png)
+![Screenshot](Assets/screencapture-br3ndan-l8n-github-io-Day-Calendar-2020-07-24-20_37_43.png)
 
 
 
